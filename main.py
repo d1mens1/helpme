@@ -135,7 +135,7 @@ def func(message):
         bp = cursor.execute(f'SELECT bp_name FROM bp WHERE bp_power > {cputdp + gputdp + 150}').fetchone()[0]
 
         bot.send_message(message.chat.id, f'В таком случае вам подходит процессор {splt(rcpu)}, в связке с видеокартой {rgpu}, с {c} Гб оперативной памяти серии {rram}, на базе материнской платы {mb}. Питать это будет блок питания {bp} ',reply_markup=types.ReplyKeyboardRemove())
-
+#
     elif message.text == "32 Гб":
         c = '32'
         rcpu = cursor.execute(f'SELECT cpu_name FROM cpu WHERE cpu_price == {a} AND (cpu_task == {b} OR cpu_task == {e}) ORDER BY cpu_bench DESC').fetchone()[0]
